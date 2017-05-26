@@ -1,0 +1,15 @@
+<h2><%= @artist.name %></h2>
+
+<div class = "container">
+  <h3>List of all songs by this artist: </h3>
+
+  <% if @artist.songs.any?  %>
+    <ul>
+      <% @artist.songs.each do |song| %>
+      <li><%= link_to song.title, song_path(song) %></li>
+  <% end %>
+    </ul>
+  <% else %>
+    <p>This artist has yet to sing a beautiful song to our database!</p>
+  <% end %>
+</div>
