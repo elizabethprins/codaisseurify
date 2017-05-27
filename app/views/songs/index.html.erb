@@ -3,7 +3,7 @@
 <div class="list_style">
 
   <% @songs.each do |song| %>
-    <%= link_to song.title, song_path(song.id) %>
+    <%= link_to song.title, artist_song_path(song.id) %>
   <% end %>
 
 </div>

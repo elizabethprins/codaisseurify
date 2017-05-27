@@ -1,0 +1,17 @@
+<%= form_for [:artist, @song] do |f| %>
+
+  <ul>
+     <% @song.errors.full_messages.each do |msg| %>
+       <li><%= msg %></li>
+     <% end %>
+  </ul>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :artist_id %>
+  <%= f.collection_select(:artist_id, Artist.all, :id, :name) %>
+
+  <%= f.submit ("Add this song!") %>
+
+<% end %>
