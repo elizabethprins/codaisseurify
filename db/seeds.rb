@@ -8,7 +8,7 @@
 
 artist1 = Artist.create!({ name: "The Rolling Rubies", img_url: "https://goo.gl/ZF7gGK" })
 artist2 = Artist.create!({ name: "Jazzin' Java", img_url: "https://goo.gl/ZOcrNF" })
-artist3 = Artist.create!({ name: "The Autocoders", img_url: "https://goo.gl/Ad5sDb" })
+artist3 = Artist.create!({ name: "The Autocoders", img_url: "https://goo.gl/4YNr8S" })
 artist4 = Artist.create!({ name: "Pythonious Monk", img_url: "https://goo.gl/Wa0Igr" })
 artist5 = Artist.create!({ name: "Floppy Drivers", img_url: "https://goo.gl/dcjk6U" })
 artist6 = Artist.create!({ name: "The Refactory", img_url: "https://goo.gl/7dN4LK" })

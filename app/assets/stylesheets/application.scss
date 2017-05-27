@@ -3,14 +3,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
-.container img{
+.container img {
   max-width: 300px;
   max-height: auto;
 }
 
+.jumbotron {
+  min-height: 362px;
+}
 
-.pull-right img{
+.pull-right img {
   max-width: auto;
   max-height: 362px;
 }

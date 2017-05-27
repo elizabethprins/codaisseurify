@@ -10,7 +10,7 @@
   <%= f.text_field :title %>
 
   <%= f.label :artist_id %>
-  <%= f.collection_select(:artist_id, Artist.all, :id, :name) %>
+  <%= f.collection_select(:artist_id, Artist.all, :id, :name, prompt: "Choose an artist!") %>
 
   <%= f.submit ("Add this song!") %>
 
