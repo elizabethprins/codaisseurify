@@ -1,17 +1,17 @@
 <h2><%= @artist.name %></h2>
+
 <div class="pull-right">
   <%= image_tag @artist.img_url %>
 </div>
 
 <div class = "jumbotron">
   <h3>List of all songs by this artist: </h3>
-
   <% if @artist.songs.any?  %>
     <ul>
       <% @artist.songs.each do |song| %>
-      <li><%= song.title %></li>
-      <%= link_to "Delete", artist_song_path(@artist, song.id), method: :delete, data: { confirm: "Are you sure you want to delete #{song.title} by #{@artist.name}?" } %>
-  <% end %>
+        <li><%= song.title %></li>
+        <%= link_to "Delete", artist_song_path(@artist, song.id), method: :delete, data: { confirm: "Are you sure you want to delete #{song.title} by #{@artist.name}?" } %>
+      <% end %>
     </ul>
   <% else %>
     <p>This artist has yet to sing a song to our database!</p>
@@ -26,7 +26,7 @@
 <h1>Add a song to this artist!</h1>
 
 <nav>
-<%= link_to "Add a song", new_artist_song_path(@artist) %>
-<%= link_to "Delete this artist", artist_path(@artist), method: :delete, data: { confirm: "Are you sure you want to delete everything by #{@artist.name}?" } %>
-<%= link_to "Home", root_path %>
+  <%= link_to "Add a song", new_artist_song_path(@artist) %>
+  <%= link_to "Delete this artist", artist_path(@artist), method: :delete, data: { confirm: "Are you sure you want to delete everything by #{@artist.name}?" } %>
+  <%= link_to "Home", root_path %>
 </nav>

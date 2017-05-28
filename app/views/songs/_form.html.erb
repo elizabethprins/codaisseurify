@@ -1,9 +1,9 @@
 <%= form_for [:artist, @song] do |f| %>
 
   <ul>
-     <% @song.errors.full_messages.each do |msg| %>
-       <li><%= msg %></li>
-     <% end %>
+    <% @song.errors.full_messages.each do |msg| %>
+     <li><%= msg %></li>
+    <% end %>
   </ul>
 
   <%= f.label :title %>

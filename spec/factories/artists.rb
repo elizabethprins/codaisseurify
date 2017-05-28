@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :artist do
-    name      { Faker::RickAndMorty.character }
+    name      { Faker::Name.name }
     img_url   { Faker::Internet.url }
   end
 end
