@@ -1,19 +1,21 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Welcome to Codaiseurify!</h1>
+
+<hr>
 
 <div class = "container">
   <% @artists.each do |artist| %>
-    <div class = "container">
-      <h3><%= link_to artist.name, artist_path(artist) %></h3>
+    <div class="col-md-4">
       <%= image_tag artist.img_url %>
+      <h4><%= link_to artist.name, artist_path(artist) %></h4>
     </div>
   <% end %>
 </div>
 
-
-<h1>See anyone missing?</h1>
+<hr>
 
 <nav>
-  <%= link_to "Add an artist", new_artist_path %>
+  <h3>See anyone missing?</h3>
+  <%= link_to "Add an artist", new_artist_path, class: "btn btn-default" %>
 </nav>
+
+<hr>
