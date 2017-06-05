@@ -1,0 +1,10 @@
+<% if @artist.songs.any?  %>
+  <ul>
+    <% @artist.songs.each do |song| %>
+      <li><%= song.title %>
+      <%= link_to "[delete]", artist_song_path(@artist, song.id), method: :delete, remote: true, data: { confirm: "Are you sure you want to delete #{song.title} by #{@artist.name}?" } %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>This artist has yet to sing a song to our database!</p>
+<% end %>
