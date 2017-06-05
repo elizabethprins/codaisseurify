@@ -1,4 +1,4 @@
-<%= form_for [:artist, @song] do |f| %>
+<%= form_with(model: [@artist, @song], remote: true) do |f| %>
 
   <ul>
       <% @song.errors.full_messages.each do |msg| %>

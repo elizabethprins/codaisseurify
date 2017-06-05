@@ -6,26 +6,22 @@
 
 <div class = "jumbotron">
   <div class="container">
-  <h4>List of all songs by this artist:</h4>
-
-
-      <%= render "songs/songlist" %>
-
-
-
-
+    <h4>List of all songs by this artist:</h4>
+    <%= render "songs/songlist" %>
   </div>
 </div>
 
 <hr>
 
-
-
+<div class="addsong">
+  <h3>Add a Song!</h3>
+  <%= render "songs/addsong" %>
+</div>
 
 <hr>
 
 <nav>
-  <%= link_to "Add a song to this artist", new_artist_song_path(@artist), class: "btn btn-default" %>
   <%= link_to "Delete this artist", artist_path(@artist), method: :delete, data: { confirm: "Are you sure you want to delete everything by #{@artist.name}?" },class: "btn btn-default" %>
+  <%= link_to "Delete all songs", artist_song_path(@artist), method: :delete_all, remote: true, data: { confirm: "Are you sure you want to delete all songs by #{@artist.name}?" },class: "btn btn-default" %>
   <%= link_to "Home", root_path, class: "btn btn-default" %>
 </nav>

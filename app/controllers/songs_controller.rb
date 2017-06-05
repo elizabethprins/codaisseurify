@@ -18,8 +18,8 @@ class SongsController < ApplicationController
 
     respond_to do |format|
       if @song.save
-        format.html { redirect_to associated_artist}
-        format.js   { render :show, status: :created, location: @song }
+        format.html { redirect_to associated_artist }
+        format.js   { redirect_to associated_artist }
       else
         format.html { redirect_to associated_artist }
         format.js   { render json: @song.errors, status: :unprocessable_entity }
@@ -28,17 +28,14 @@ class SongsController < ApplicationController
   end
 
   def destroy
-    find_song
-    @artist = @song.artist
-    @song.destroy!
-    @songs = Song.where(artist_id: @artist.id)
-
-    respond_to do |format|
-      format.html { redirect_to associated_artist }
-      format.js   { redirect_to associated_artist }
-    end
+    find_song.destroy
+    ajax_respond
   end
 
+  def destroy_all
+    find_song.destroy_all
+    ajax_respond
+  end
 
 
   private
@@ -53,5 +50,12 @@ class SongsController < ApplicationController
 
   def song_params
     params.require(:song).permit(:title, :artist_id)
+  end
+
+  def ajax_respond
+    respond_to do |format|
+      format.html { redirect_to associated_artist }
+      format.js   { redirect_to associated_artist }
+    end
   end
 end
